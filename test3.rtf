@@ -1,8 +1,214 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red89\green138\blue67;\red23\green23\blue23;\red202\green202\blue202;
+\red183\green111\blue179;\red212\green214\blue154;\red140\green211\blue254;\red167\green197\blue152;\red67\green192\blue160;
+\red70\green137\blue204;}
+{\*\expandedcolortbl;;\cssrgb\c41569\c60000\c33333;\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;
+\cssrgb\c77255\c52549\c75294;\cssrgb\c86275\c86275\c66667;\cssrgb\c61176\c86275\c99608;\cssrgb\c70980\c80784\c65882;\cssrgb\c30588\c78824\c69020;
+\cssrgb\c33725\c61176\c83922;}
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
 
-\f0\fs24 \cf0 Test3}
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # I do exclude max, so this is like `min...max`.\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 range\cf4 \strokec4 (\cf7 \strokec7 min, max\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  [] \cf5 \strokec5 if\cf4 \strokec4  \cf6 \strokec6 max\cf4 \strokec4  <= \cf6 \strokec6 min\cf4 \cb1 \strokec4 \
+\cb3   \cf6 \strokec6 range\cf4 \strokec4 (\cf7 \strokec7 min\cf4 \strokec4 , \cf7 \strokec7 max\cf4 \strokec4  - \cf8 \strokec8 1\cf4 \strokec4 ) << \cf7 \strokec7 max\cf4 \strokec4  - \cf8 \strokec8 1\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 sum_iter\cf4 \strokec4 (\cf7 \strokec7 nums\cf4 \strokec4 )\cb1 \
+\cb3   \cf7 \strokec7 sum\cf4 \strokec4  = \cf8 \strokec8 0\cf4 \cb1 \strokec4 \
+\cb3   \cf7 \strokec7 nums\cf4 \strokec4 .\cf6 \strokec6 each\cf4 \strokec4  \{ |\cf7 \strokec7 num\cf4 \strokec4 | \cf7 \strokec7 sum\cf4 \strokec4  += \cf7 \strokec7 num\cf4 \strokec4  \}\cb1 \
+\cb3   \cf6 \strokec6 sum\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 sum_rec\cf4 \strokec4 (\cf7 \strokec7 nums\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  \cf8 \strokec8 0\cf4 \strokec4  \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 nums\cf4 \strokec4 .\cf6 \strokec6 empty?\cf4 \cb1 \strokec4 \
+\cb3   nums[\cf8 \strokec8 0\cf4 \strokec4 ] + \cf6 \strokec6 sum_rec\cf4 \strokec4 (\cf7 \strokec7 nums\cf4 \strokec4 .\cf6 \strokec6 drop\cf4 \strokec4 (\cf8 \strokec8 1\cf4 \strokec4 ))\cb1 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 exp1\cf4 \strokec4 (\cf7 \strokec7 base, power\cf4 \strokec4 )\cb1 \
+\cb3   \cf7 \strokec7 power\cf4 \strokec4  == \cf8 \strokec8 0\cf4 \strokec4  ? \cf8 \strokec8 1\cf4 \strokec4  : \cf7 \strokec7 base\cf4 \strokec4  * \cf6 \strokec6 exp1\cf4 \strokec4 (\cf7 \strokec7 base\cf4 \strokec4 , \cf7 \strokec7 power\cf4 \strokec4  - \cf8 \strokec8 1\cf4 \strokec4 )\cb1 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 exp2\cf4 \strokec4 (\cf7 \strokec7 base, power\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  \cf8 \strokec8 1\cf4 \strokec4  \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 power\cf4 \strokec4  == \cf8 \strokec8 0\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf7 \strokec7 half\cf4 \strokec4  = \cf6 \strokec6 exp2\cf4 \strokec4 (\cf7 \strokec7 base\cf4 \strokec4 , \cf7 \strokec7 power\cf4 \strokec4  / \cf8 \strokec8 2\cf4 \strokec4 )\cb1 \
+\
+\cb3   \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 power\cf4 \strokec4 .\cf6 \strokec6 even?\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 half\cf4 \strokec4  * half\cb1 \
+\cb3   \cf5 \strokec5 else\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # note that (power / 2) == ((power - 1) / 2) if power.odd?\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 base\cf4 \strokec4  * \cf7 \strokec7 half\cf4 \strokec4  * half\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 class\cf4 \strokec4  \cf9 \strokec9 Array\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 deep_dup\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 new_array\cf4 \strokec4  = []\cb1 \
+\cb3     \cf10 \strokec10 self\cf4 \strokec4 .\cf6 \strokec6 each\cf4 \strokec4  \cf5 \strokec5 do \cf4 \strokec4 |\cf7 \strokec7 el\cf4 \strokec4 |\cb1 \
+\cb3       \cf7 \strokec7 new_array\cf4 \strokec4  << (\cf7 \strokec7 el\cf4 \strokec4 .\cf6 \strokec6 is_a?\cf4 \strokec4 (\cf7 \strokec7 Array\cf4 \strokec4 ) ? \cf7 \strokec7 el\cf4 \strokec4 .\cf6 \strokec6 deep_dup\cf4 \strokec4  : \cf7 \strokec7 el\cf4 \strokec4 )\cb1 \
+\cb3     \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cb3     new_array\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf2 \strokec2 # The ultimate one-liner!\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 dd_map\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 map\cf4 \strokec4  \{ |\cf7 \strokec7 el\cf4 \strokec4 | \cf7 \strokec7 el\cf4 \strokec4 .\cf6 \strokec6 is_a?\cf4 \strokec4 (\cf7 \strokec7 Array\cf4 \strokec4 ) ? \cf7 \strokec7 el\cf4 \strokec4 .\cf6 \strokec6 dd_map\cf4 \strokec4  : \cf7 \strokec7 el\cf4 \strokec4  \}\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 fibs_iter\cf4 \strokec4 (\cf7 \strokec7 n\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  [] \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 n\cf4 \strokec4  == \cf8 \strokec8 0\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  [\cf8 \strokec8 0\cf4 \strokec4 ] \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 n\cf4 \strokec4  == \cf8 \strokec8 1\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf7 \strokec7 fibs\cf4 \strokec4  = [\cf8 \strokec8 0\cf4 \strokec4 , \cf8 \strokec8 1\cf4 \strokec4 ]\cb1 \
+\
+\cb3   \cf5 \strokec5 while\cf4 \strokec4  \cf7 \strokec7 fibs\cf4 \strokec4 .\cf6 \strokec6 count\cf4 \strokec4  < n\cb1 \
+\cb3     \cf7 \strokec7 fibs\cf4 \strokec4  << fibs[-\cf8 \strokec8 2\cf4 \strokec4 ] + fibs[-\cf8 \strokec8 1\cf4 \strokec4 ]\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cb3   fibs\cb1 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 fibs_rec\cf4 \strokec4 (\cf7 \strokec7 n\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 if\cf4 \strokec4  n <= \cf8 \strokec8 2\cf4 \cb1 \strokec4 \
+\cb3     [\cf8 \strokec8 0\cf4 \strokec4 , \cf8 \strokec8 1\cf4 \strokec4 ].\cf6 \strokec6 take\cf4 \strokec4 (\cf7 \strokec7 n\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 else\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 fibs\cf4 \strokec4  = \cf6 \strokec6 fibs_rec\cf4 \strokec4 (\cf7 \strokec7 n\cf4 \strokec4  - \cf8 \strokec8 1\cf4 \strokec4 )\cb1 \
+\cb3     \cf7 \strokec7 fibs\cf4 \strokec4  << fibs[-\cf8 \strokec8 2\cf4 \strokec4 ] + fibs[-\cf8 \strokec8 1\cf4 \strokec4 ]\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 class\cf4 \strokec4  \cf9 \strokec9 Array\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 subsets\cf4 \cb1 \strokec4 \
+\cb3     \cf5 \strokec5 return\cf4 \strokec4  [[]] \cf5 \strokec5 if\cf4 \strokec4  \cf6 \strokec6 empty?\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 subs\cf4 \strokec4  = \cf6 \strokec6 take\cf4 \strokec4 (\cf7 \strokec7 count\cf4 \strokec4  - \cf8 \strokec8 1\cf4 \strokec4 ).\cf6 \strokec6 subsets\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 subs\cf4 \strokec4 .\cf6 \strokec6 concat\cf4 \strokec4 (\cf7 \strokec7 subs\cf4 \strokec4 .\cf6 \strokec6 map\cf4 \strokec4  \{ |\cf7 \strokec7 sub\cf4 \strokec4 | \cf7 \strokec7 sub\cf4 \strokec4  + [\cf7 \strokec7 last\cf4 \strokec4 ] \})\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 permutations\cf4 \strokec4 (\cf7 \strokec7 array\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  [\cf7 \strokec7 array\cf4 \strokec4 ] \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 array\cf4 \strokec4 .\cf6 \strokec6 length\cf4 \strokec4  <= \cf8 \strokec8 1\cf4 \cb1 \strokec4 \
+\
+\
+\cb3   \cf2 \strokec2 # Similar to the subsets problem, we observe that to get the permutations\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # of [1, 2, 3] we can look at the permutations of [1, 2] which are\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # [1, 2] and [2, 1] and add the last element to every possible index getting\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # [3, 1, 2], [1, 3, 2], [1, 2, 3], [3, 2, 1], [2, 3, 1]\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf2 \strokec2 # pop off the last element\cf4 \cb1 \strokec4 \
+\cb3   \cf7 \strokec7 first\cf4 \strokec4  = \cf7 \strokec7 array\cf4 \strokec4 .\cf6 \strokec6 shift\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # make the recursive call\cf4 \cb1 \strokec4 \
+\cb3   \cf7 \strokec7 perms\cf4 \strokec4  = \cf6 \strokec6 permutations\cf4 \strokec4 (\cf7 \strokec7 array\cf4 \strokec4 )\cb1 \
+\cb3   \cf2 \strokec2 # we will need an array to store all our different permutations\cf4 \cb1 \strokec4 \
+\cb3   \cf7 \strokec7 total_permutations\cf4 \strokec4  = []\cb1 \
+\
+\
+\cb3   \cf2 \strokec2 # Now we iterate over the result of our recusive call say [[1, 2], [2, 1]]\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # and for each permutation add first into every index. This new subarray\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # gets added to total_permutations.\cf4 \cb1 \strokec4 \
+\cb3   \cf7 \strokec7 perms\cf4 \strokec4 .\cf6 \strokec6 each\cf4 \strokec4  \cf5 \strokec5 do \cf4 \strokec4 |\cf7 \strokec7 perm\cf4 \strokec4 |\cb1 \
+\cb3     (\cf8 \strokec8 0\cf4 \strokec4 ..\cf7 \strokec7 perm\cf4 \strokec4 .\cf6 \strokec6 length\cf4 \strokec4 ).\cf6 \strokec6 each\cf4 \strokec4  \cf5 \strokec5 do \cf4 \strokec4 |\cf7 \strokec7 i\cf4 \strokec4 |\cb1 \
+\cb3       \cf7 \strokec7 total_permutations\cf4 \strokec4  << perm[\cf8 \strokec8 0\cf4 \strokec4 ...\cf7 \strokec7 i\cf4 \strokec4 ] + [\cf7 \strokec7 first\cf4 \strokec4 ] + perm[\cf7 \strokec7 i\cf4 \strokec4 ..-\cf8 \strokec8 1\cf4 \strokec4 ]\cb1 \
+\cb3     \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cb3   total_permutations\cb1 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 bsearch\cf4 \strokec4 (\cf7 \strokec7 nums, target\cf4 \strokec4 )\cb1 \
+\cb3   \cf2 \strokec2 # nil if not found; can't find anything in an empty array\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  \cf10 \strokec10 nil\cf4 \strokec4  \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 nums\cf4 \strokec4 .\cf6 \strokec6 empty?\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf7 \strokec7 probe_index\cf4 \strokec4  = \cf7 \strokec7 nums\cf4 \strokec4 .\cf6 \strokec6 length\cf4 \strokec4  / \cf8 \strokec8 2\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 case\cf4 \strokec4  \cf6 \strokec6 target\cf4 \strokec4  <=> nums[\cf7 \strokec7 probe_index\cf4 \strokec4 ]\cb1 \
+\cb3   \cf5 \strokec5 when\cf4 \strokec4  -\cf8 \strokec8 1\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # search in left\cf4 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 bsearch\cf4 \strokec4 (\cf7 \strokec7 nums\cf4 \strokec4 .\cf6 \strokec6 take\cf4 \strokec4 (\cf7 \strokec7 probe_index\cf4 \strokec4 ), \cf7 \strokec7 target\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 when\cf4 \strokec4  \cf8 \strokec8 0\cf4 \cb1 \strokec4 \
+\cb3     probe_index \cf2 \strokec2 # found it!\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 when\cf4 \strokec4  \cf8 \strokec8 1\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # search in the right; don't forget that the right subarray starts\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # at `probe_index + 1`, so we need to offset by that amount.\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 sub_answer\cf4 \strokec4  = \cf6 \strokec6 bsearch\cf4 \strokec4 (\cf7 \strokec7 nums\cf4 \strokec4 .\cf6 \strokec6 drop\cf4 \strokec4 (\cf7 \strokec7 probe_index\cf4 \strokec4  + \cf8 \strokec8 1\cf4 \strokec4 ), \cf7 \strokec7 target\cf4 \strokec4 )\cb1 \
+\cb3     \cf7 \strokec7 sub_answer\cf4 \strokec4 .\cf6 \strokec6 nil?\cf4 \strokec4  ? \cf10 \strokec10 nil\cf4 \strokec4  : (\cf7 \strokec7 probe_index\cf4 \strokec4  + \cf8 \strokec8 1\cf4 \strokec4 ) + sub_answer\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf2 \strokec2 # Note that the array size is always decreasing through each\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # recursive call, so we'll either find the item, or eventually end\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # up with an empty array.\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 class\cf4 \strokec4  \cf9 \strokec9 Array\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 merge_sort\cf4 \cb1 \strokec4 \
+\cb3     \cf5 \strokec5 return\cf4 \strokec4  \cf10 \strokec10 self\cf4 \strokec4  \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 count\cf4 \strokec4  < \cf8 \strokec8 2\cf4 \cb1 \strokec4 \
+\
+\cb3     \cf7 \strokec7 middle\cf4 \strokec4  = \cf7 \strokec7 count\cf4 \strokec4  / \cf8 \strokec8 2\cf4 \cb1 \strokec4 \
+\
+\cb3     \cf7 \strokec7 left\cf4 \strokec4 , \cf7 \strokec7 right\cf4 \strokec4  = \cf10 \strokec10 self\cf4 \strokec4 .\cf6 \strokec6 take\cf4 \strokec4 (\cf7 \strokec7 middle\cf4 \strokec4 ), \cf10 \strokec10 self\cf4 \strokec4 .\cf6 \strokec6 drop\cf4 \strokec4 (\cf7 \strokec7 middle\cf4 \strokec4 )\cb1 \
+\cb3     \cf7 \strokec7 sorted_left\cf4 \strokec4 , \cf7 \strokec7 sorted_right\cf4 \strokec4  = \cf7 \strokec7 left\cf4 \strokec4 .\cf6 \strokec6 merge_sort\cf4 \strokec4 , \cf7 \strokec7 right\cf4 \strokec4 .\cf6 \strokec6 merge_sort\cf4 \cb1 \strokec4 \
+\
+\cb3     \cf6 \strokec6 merge\cf4 \strokec4 (\cf7 \strokec7 sorted_left\cf4 \strokec4 , \cf7 \strokec7 sorted_right\cf4 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf5 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 merge\cf4 \strokec4 (\cf7 \strokec7 left, right\cf4 \strokec4 )\cb1 \
+\cb3     \cf7 \strokec7 merged_array\cf4 \strokec4  = []\cb1 \
+\cb3     \cf5 \strokec5 until\cf4 \strokec4  \cf7 \strokec7 left\cf4 \strokec4 .\cf6 \strokec6 empty?\cf4 \strokec4  || \cf7 \strokec7 right\cf4 \strokec4 .\cf6 \strokec6 empty?\cf4 \cb1 \strokec4 \
+\cb3       \cf7 \strokec7 merged_array\cf4 \strokec4  << (\cf7 \strokec7 left\cf4 \strokec4 .\cf6 \strokec6 first\cf4 \strokec4  < \cf7 \strokec7 right\cf4 \strokec4 .\cf6 \strokec6 first\cf4 \strokec4 ) ? \cf7 \strokec7 left\cf4 \strokec4 .\cf6 \strokec6 shift\cf4 \strokec4  : \cf7 \strokec7 right\cf4 \strokec4 .\cf6 \strokec6 shift\cf4 \cb1 \strokec4 \
+\cb3     \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cb3     \cf7 \strokec7 merged_array\cf4 \strokec4  + \cf7 \strokec7 left\cf4 \strokec4  + right\cb1 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cf5 \cb3 \strokec5 def\cf4 \strokec4  \cf6 \strokec6 make_change\cf4 \strokec4 (\cf7 \strokec7 target, coins \cf4 \strokec4 =\cf7 \strokec7  [\cf8 \strokec8 25\cf7 \strokec7 , \cf8 \strokec8 10\cf7 \strokec7 , \cf8 \strokec8 5\cf7 \strokec7 , \cf8 \strokec8 1\cf7 \strokec7 ]\cf4 \strokec4 )\cb1 \
+\cb3   \cf2 \strokec2 # Don't need any coins to make 0 cents change\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  [] \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 target\cf4 \strokec4  == \cf8 \strokec8 0\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # Can't make change if all the coins are too big. This is in case\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # the coins are so weird that there isn't a 1 cent piece.\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 return\cf4 \strokec4  \cf10 \strokec10 nil\cf4 \strokec4  \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 coins\cf4 \strokec4 .\cf6 \strokec6 none?\cf4 \strokec4  \{ |\cf7 \strokec7 coin\cf4 \strokec4 | coin <= \cf7 \strokec7 target\cf4 \strokec4  \}\cb1 \
+\
+\cb3   \cf2 \strokec2 # Optimization: make sure coins are always sorted descending in\cf4 \cb1 \strokec4 \
+\cb3   \cf2 \strokec2 # size. We'll see why later.\cf4 \cb1 \strokec4 \
+\cb3   \cf7 \strokec7 coins\cf4 \strokec4  = \cf7 \strokec7 coins\cf4 \strokec4 .\cf6 \strokec6 sort\cf4 \strokec4 .\cf6 \strokec6 reverse\cf4 \cb1 \strokec4 \
+\
+\cb3   \cf7 \strokec7 best_change\cf4 \strokec4  = \cf10 \strokec10 nil\cf4 \cb1 \strokec4 \
+\cb3   \cf7 \strokec7 coins\cf4 \strokec4 .\cf6 \strokec6 each_with_index\cf4 \strokec4  \cf5 \strokec5 do \cf4 \strokec4 |\cf7 \strokec7 coin\cf4 \strokec4 , \cf7 \strokec7 index\cf4 \strokec4 |\cb1 \
+\cb3     \cf2 \strokec2 # can't use this coin, it's too big\cf4 \cb1 \strokec4 \
+\cb3     \cf5 \strokec5 next\cf4 \strokec4  \cf5 \strokec5 if\cf4 \strokec4  coin > \cf6 \strokec6 target\cf4 \cb1 \strokec4 \
+\
+\cb3     \cf2 \strokec2 # use this coin\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 remainder\cf4 \strokec4  = \cf7 \strokec7 target\cf4 \strokec4  - coin\cb1 \
+\
+\cb3     \cf2 \strokec2 # Find the best way to make change with the remainder (recursive\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # call). Why `coins.drop(index)`? This is an optimization. Because\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # we want to avoid double counting; imagine two ways to make\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # change for 6 cents:\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 #   (1) first use a nickel, then a penny\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 #   (2) first use a penny, then a nickel\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # To avoid double counting, we should require that we use *larger\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # coins first*. This is what `coins.drop(index)` enforces; if we\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # use a smaller coin, we can never go back to using larger coins\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # later.\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 best_remainder\cf4 \strokec4  = \cf6 \strokec6 make_change\cf4 \strokec4 (\cf7 \strokec7 remainder\cf4 \strokec4 , \cf7 \strokec7 coins\cf4 \strokec4 .\cf6 \strokec6 drop\cf4 \strokec4 (\cf7 \strokec7 index\cf4 \strokec4 ))\cb1 \
+\
+\cb3     \cf2 \strokec2 # We may not be able to make the remaining amount of change (e.g.,\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # if coins doesn't have a 1cent piece), in which case we shouldn't\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # use this coin.\cf4 \cb1 \strokec4 \
+\cb3     \cf5 \strokec5 next\cf4 \strokec4  \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 best_remainder\cf4 \strokec4 .\cf6 \strokec6 nil?\cf4 \cb1 \strokec4 \
+\
+\cb3     \cf2 \strokec2 # Otherwise, the best way to make the change **using this coin**,\cf4 \cb1 \strokec4 \
+\cb3     \cf2 \strokec2 # is the best way to make the remainder, plus this one coin.\cf4 \cb1 \strokec4 \
+\cb3     \cf7 \strokec7 this_change\cf4 \strokec4  = [\cf7 \strokec7 coin\cf4 \strokec4 ] + best_remainder\cb1 \
+\
+\cb3     \cf2 \strokec2 # Is this better than anything we've seen so far?\cf4 \cb1 \strokec4 \
+\cb3     \cf5 \strokec5 if\cf4 \strokec4  \cf7 \strokec7 best_change\cf4 \strokec4 .\cf6 \strokec6 nil?\cf4 \strokec4  || (\cf7 \strokec7 this_change\cf4 \strokec4 .\cf6 \strokec6 count\cf4 \strokec4  < \cf7 \strokec7 best_change\cf4 \strokec4 .\cf6 \strokec6 count\cf4 \strokec4 )\cb1 \
+\cb3       \cf7 \strokec7 best_change\cf4 \strokec4  = this_change\cb1 \
+\cb3     \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 end\cf4 \cb1 \strokec4 \
+\
+\cb3   best_change\cb1 \
+\cf5 \cb3 \strokec5 end\cf4 \cb1 \strokec4 \
+}
